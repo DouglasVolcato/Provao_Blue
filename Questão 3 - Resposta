@@ -1,0 +1,32 @@
+const prompt = require("prompt-sync")()
+console.clear()
+
+let salarioAtual = +prompt("Insira o valor do salário atual para o cálculo: ")
+let novoSalario = 0
+let aumentoReal = 0
+let aumentoPercentual = 0
+if (salarioAtual <= 400) {
+    aumentoPercentual = 15
+    aumentoReal = salarioAtual * 15 / 100
+    novoSalario = salarioAtual + aumentoReal
+} else if (salarioAtual > 400 && salarioAtual <= 800) {
+    aumentoPercentual = 12
+    aumentoReal = salarioAtual * 12 / 100
+    novoSalario = salarioAtual + aumentoReal
+} else if (salarioAtual > 800 && salarioAtual <= 1200) {
+    aumentoPercentual = 10
+    aumentoReal = salarioAtual * 10 / 100
+    novoSalario = salarioAtual + aumentoReal
+} else if (salarioAtual > 1200 && salarioAtual <= 2000) {
+    aumentoPercentual = 7
+    aumentoReal = salarioAtual * 7 / 100
+    novoSalario = salarioAtual + aumentoReal
+} else if (salarioAtual > 2000) {
+    aumentoPercentual = 4
+    aumentoReal = salarioAtual * 4 / 100
+    novoSalario = salarioAtual + aumentoReal
+}
+console.log(`\nSalário: R$${salarioAtual.toFixed(2)}`)
+console.log(`Salário Reajustado: R$${novoSalario.toFixed(2)}`)
+console.log(`Aumento(R$): R$${aumentoReal.toFixed(2)}`)
+console.log(`Aumento(%): ${aumentoPercentual}%`)
