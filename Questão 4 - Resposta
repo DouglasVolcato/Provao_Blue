@@ -1,0 +1,21 @@
+const prompt = require("prompt-sync")()
+console.clear()
+
+let populacaoA = +prompt("População cidade A: ")
+let populacaoB = +prompt("População cidade B: ")
+let crescimentoA = (+prompt("Crescimento cidade A: ")).toFixed(1)
+let crescimentoB = (+prompt("Crescimento cidade B: ")).toFixed(1)
+let totalA = populacaoA
+let totalB = populacaoB
+for (let i = 1; i <= 100; i++) {
+    totalA = totalA + (totalA * crescimentoA / 100)
+    totalB = totalB + (totalB * crescimentoB / 100)
+    if (totalA > totalB) {
+        console.log(`\n${i} ano(s).`)
+        break
+    }
+    if (i >= 100) {
+        console.log("\nMais de 1 século.")
+        break
+    }
+}
