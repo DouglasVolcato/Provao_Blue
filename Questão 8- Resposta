@@ -1,0 +1,22 @@
+const prompt = require("prompt-sync")()
+console.clear()
+
+let numero1 = +prompt("Primeiro número: ")
+let numero2 = +prompt("Segundo número: ")
+let soma = 0
+function criarArray(a,b) {
+    const arr = []
+    const var1 = a < b ? a : b
+    const var2 = a < b ? b : a
+    for(let i = var1 + 1; i < var2; i++) {
+        arr.push(i)
+    }
+    return arr
+}
+const listaNumeros = criarArray(numero1,numero2)
+const numeroImpar = n => n % 2 != 0
+let impares = listaNumeros.filter(numeroImpar)
+for(let i of impares) {
+    soma += i
+}
+console.log(`\nA soma dos números ímpares é ${soma}`)
