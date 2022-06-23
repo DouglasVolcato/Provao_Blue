@@ -1,0 +1,14 @@
+const prompt = require("prompt-sync")()
+console.clear()
+
+ano = 365
+mes = 30
+dia = 1
+let dias = +prompt("Insira o número de dias: ")
+let Ano = parseInt(dias / 365)
+let restoAno = parseInt(dias % 365)
+let Mes = parseInt(restoAno / 30)
+let restoMes = parseInt(restoAno % 30)
+let Dia = parseInt(restoMes / 1)
+let restoDia = parseInt(restoMes % 1)
+console.log(`\n===| IDADE |===\nAno(s): ${Ano} \nMes(es): ${Mes} \nDia(s): ${Dia}`)
