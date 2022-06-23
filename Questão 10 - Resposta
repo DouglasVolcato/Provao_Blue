@@ -1,0 +1,21 @@
+const prompt = require("prompt-sync")()
+console.clear()
+
+let n = +prompt("Tamanho do vetor: ")
+const vetor = []
+let aleatorio1 = 0
+let aleatorio2 = 0
+let aleatorio3 = 0
+for (let i = 1; i <= n; i++) {
+    aleatorio1 = Math.floor(Math.random() * 2+1)
+    aleatorio2 = Math.floor(Math.random() * 500)
+    aleatorio3 = Math.floor(Math.random() * -500)
+    const var1 = aleatorio1 == 1 ? aleatorio2 : aleatorio3
+    vetor.push(var1)
+}
+vetor.sort((a,b) => {
+    if (a < b) return -1
+    if (a > b) return 1
+})
+console.log(vetor)
+console.log(`Menor valor: ${vetor[0]} \nMaior entrada: ${vetor[vetor.length-1]}`)
