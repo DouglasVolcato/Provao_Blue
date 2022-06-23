@@ -1,0 +1,17 @@
+const prompt = require("prompt-sync")()
+console.clear()
+
+////Questão 1
+let inicio = +prompt("Hora inicial: ")
+let final = +prompt("Hora final: ")
+console.log()
+function calcularTempo(a,b){
+    if (a < b) {
+        console.log(`O jogo durou ${b - a} hora(s).`)
+    } else if (a == b) {
+        console.log(`O jogo durou 24 horas.`)
+    } else if (a > b) {
+        console.log(`O jogo durou ${24 - a + b} hora(s).`)
+    }
+}
+calcularTempo(inicio, final)
